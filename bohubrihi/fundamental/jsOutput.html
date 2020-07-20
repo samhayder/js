@@ -72,9 +72,14 @@
         4.4.11. arr.reverse() = reversing Z to A
     -->
 
-    <!-- 05. Condition (Control Flow)
+    <!-- 05. Control Flow
       5.1. If Statement
-      05.2. Nested if Statement
+      5.2. Nested if Statement
+      5.3. Switch
+      5.4. While => while (condition) {//logic here && condition}
+      5.5. For => for (initialization,condition, update) 
+      5.6. For In => iterate String/Array = index; Object = property
+      5.7. For Of => iterate String/Array = values/items
     -->
 
     <h1 id="title"></h1>
@@ -128,6 +133,35 @@
         } else {
           alert(player3 + ' player3 score is big.');
         }
+      } */
+
+      /* String && Array Iteration
+      let str = 'My name is Samsuddin Hayder.';
+      let arr = ['arr1', 'arr2', 'arr3']
+      for (let i = 0; i < str.length; i++) {
+        console.log(`index of: ${i}`);
+        console.log(str[i]);
+      } */
+
+      /* 5.6.For In => iterate String / Array = index; Object = property
+      let str = 'My name is Samsuddin Hayder';
+      let arr = ['arr1', 'arr2', 'arr3'];
+      let obj = {
+        name: 'Samsuddin Hayder',
+        profession: 'Service',
+        age: 31,
+      };
+      //String Iteration
+      for (let strIteration in str) {
+        console.log(`index: ${strIteration} & value: ${str[strIteration]}`);
+      }
+      //Array Iteration
+      for (let arrIteration in arr) {
+        console.log(`index: ${arrIteration} & value ${arr[arrIteration]}`);
+      }
+      //Object Iteration
+      for (let objIteration in obj) {
+        console.log(`property ${objIteration} & value ${obj[objIteration]}`);
       } */
     </script>
     <script src="./exercise.js"></script>
