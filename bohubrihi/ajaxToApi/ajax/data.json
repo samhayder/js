@@ -1,0 +1,19 @@
+{
+  "person": [
+    {
+      "name": "samsuddin",
+      "age": 20,
+      "married": true
+    },
+    {
+      "name": "alauddin",
+      "age": 80,
+      "married": true
+    },
+    {
+      "name": "gada yasin",
+      "age": 56,
+      "married": false
+    }
+  ]
+}

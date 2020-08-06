@@ -84,7 +84,7 @@ if (firstNumberCon || secondNumberCon || optionCon) {
 } */
 
 /* Exercise 04 */
-let userInput = parseInt(prompt('Enter Your Number?'));
+/* let userInput = parseInt(prompt('Enter Your Number?'));
 let userInputSum = 0;
 let series = '';
 
@@ -97,3 +97,46 @@ for (let i = 1; i <= userInput; i++) {
   series += ' + ';
 }
 console.log(`${series} = ${userInputSum}`);
+ */
+
+//JavaScript Classes (ES6)
+class Person {
+  constructor(firstName, lastName, dob) {
+    (this.firstName = firstName), (this.lastName = lastName), (this.dob = dob);
+  }
+
+  calculateAge() {
+    let birthday = new Date(this.dob);
+    let diff = Date.now() - birthday.getTime();
+    let ageDate = new Date(diff);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+}
+
+let personSam = new Person('sam', 'hayden', '06-30-1988');
+
+console.log(personSam);
+console.log(personSam.calculateAge());
+
+//Sub Classes (inheritance)
+class Customer {
+  constructor(fname, lname) {
+    (this.firstName = fname), (this.lastName = lname);
+  }
+  greetings() {
+    return `Hello ${this.firstName} ${this.lastName}!`;
+  }
+}
+
+let customer1 = new Customer('samsuddin', 'hayder');
+console.log(customer1);
+console.log(customer1.greetings());
+
+class NewCustomer extends Customer {
+  constructor(fname, lname, phone, id) {
+    super(fname, lname);
+    (this.phone = phone), (this.memberShip = id);
+  }
+}
+let newCustomer2 = new NewCustomer('yasin', 'hayder', '01778965423', 'esd235');
+console.log(newCustomer2);
