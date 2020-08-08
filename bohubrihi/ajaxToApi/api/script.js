@@ -46,8 +46,8 @@ function fetchApi() {
       return res.json();
     })
     .then((data) => {
-      console.log(data.value.joke);
       document.querySelector('.fetch-output').innerHTML = data.value.joke;
+      //console.log(data.value.joke);
     })
     .catch((err) => {
       console.log(err);
