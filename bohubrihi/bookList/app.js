@@ -5,6 +5,7 @@ let bookList = document.querySelector('.book-list');
 //Event Listener
 form.addEventListener('submit', addBook);
 bookList.addEventListener('click', removeSingleBook);
+//document.addEventListener('DOMContentLoaded', Store.displayBooksLS());
 
 //OOP
 class Book {
@@ -14,9 +15,7 @@ class Book {
 }
 
 class UI {
-  constructor() {}
-
-  addBookFormUI(book) {
+  static addBookFormUI(book) {
     let tbody = document.querySelector('.book-list');
     let tr = document.createElement('tr');
     tr.innerHTML = `
@@ -27,13 +26,13 @@ class UI {
     tbody.appendChild(tr);
   }
 
-  clearFiled() {
+  static clearFiled() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
     document.querySelector('#isbn').value = '';
   }
 
-  showMsg(message, className) {
+  static showMsg(message, className) {
     let msg = document.querySelector('.show-msg');
     let msgContent = document.createElement('p');
     msgContent.className = `btn ${className}`;
@@ -45,12 +44,44 @@ class UI {
     }, 3000);
   }
 
-  removeSingleBookFormUI(target) {
+  static removeSingleBookFormUI(target) {
     if (target.hasAttribute('href')) {
       if (confirm('Are you sure? Remove this book item.')) {
         target.parentElement.parentElement.remove();
       }
     }
+  }
+}
+
+//Local store
+class Store {
+  //Get books
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse('books');
+    }
+    return books;
+  }
+
+  //Add book
+  static addBook(book) {
+    let books = Store.getBooks();
+    books.push(book);
+
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  //Display books
+  static displayBooksLS() {
+    let books = Store.getBooks();
+
+    books.forEach((book) => {
+      UI.addBookFormUI(book);
+      console.log(book);
+    });
   }
 }
 
@@ -61,21 +92,19 @@ function addBook(e) {
   let author = document.querySelector('#author').value;
   let isbn = document.querySelector('#isbn').value;
 
-  let ui = new UI();
-
   if (title === '' || author === '' || isbn === '') {
-    ui.showMsg('please fill all field', 'btn-danger');
+    UI.showMsg('please fill all field', 'btn-danger');
   } else {
     let book = new Book(title, author, isbn);
-    ui.addBookFormUI(book);
-    ui.showMsg('Successfully added a single book.', 'btn-success');
-    ui.clearFiled();
+    UI.addBookFormUI(book);
+    UI.showMsg('Successfully added a single book.', 'btn-success');
+    UI.clearFiled();
+    Store.addBook(book); //Local Store
   }
 }
 
 function removeSingleBook(e) {
   e.preventDefault();
 
-  let ui = new UI();
-  ui.removeSingleBookFormUI(e.target);
+  UI.removeSingleBookFormUI(e.target);
 }
