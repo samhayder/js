@@ -22,6 +22,7 @@ let dummyText = [
 let form = document.querySelector('form');
 let amount = document.querySelector('.amount');
 let result = document.querySelector('.result');
+let copy = document.querySelector('.copy');
 
 function textGenerator(e) {
   e.preventDefault();
@@ -35,7 +36,7 @@ function textGenerator(e) {
     let sliceDummyText = dummyText.slice(0, value);
     let finalDummyText = sliceDummyText
       .map((item) => {
-        return `<p> ${item} </P>`;
+        return `<ul> <li> ${item} </li> </ul>`;
       })
       .join('');
     result.innerHTML = finalDummyText;

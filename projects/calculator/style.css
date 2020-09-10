@@ -1,0 +1,29 @@
+form {
+  width: 250px;
+  margin: 0 auto;
+  padding: 15px;
+  box-shadow: 0 0 10px #000;
+}
+
+input[type='text'] {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 36px;
+  text-align: right;
+}
+
+input[type='button'] {
+  width: calc(235px / 4);
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  height: 60px;
+}
+
+input[type='button']:focus {
+  cursor: pointer;
+  background: green;
+  color: white;
+  outline: none;
+  border: none;
+}

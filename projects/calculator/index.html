@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form name="cal">
+      <input type="text" name="screen" disabled />
+      <hr />
+      <br />
+      <input
+        type="button"
+        value="&radic;"
+        onclick="cal.screen.value = Math.sqrt(cal.screen.value)"
+      />
+      <input type="button" value="CE" onclick="cal.screen.value = ''" />
+      <input type="button" value="C" onclick="cal.screen.value = ''" />
+      <input
+        type="button"
+        value="&larr;"
+        onclick="cal.screen.value = cal.screen.value.slice(0, -1)"
+      />
+      <br />
+      <input type="button" value="7" onclick="cal.screen.value += '7'" />
+      <input type="button" value="8" onclick="cal.screen.value += '8'" />
+      <input type="button" value="9" onclick="cal.screen.value += '9'" />
+      <input type="button" value="/" onclick="cal.screen.value += '/'" />
+      <br />
+      <input type="button" value="4" onclick="cal.screen.value += '4'" />
+      <input type="button" value="5" onclick="cal.screen.value += '5'" />
+      <input type="button" value="6" onclick="cal.screen.value += '6'" />
+      <input type="button" value="*" onclick="cal.screen.value += '*'" />
+      <br />
+      <input type="button" value="1" onclick="cal.screen.value += '1'" />
+      <input type="button" value="2" onclick="cal.screen.value += '2'" />
+      <input type="button" value="3" onclick="cal.screen.value += '3'" />
+      <input type="button" value="-" onclick="cal.screen.value += '-'" />
+      <br />
+      <input type="button" value="0" onclick="cal.screen.value += '0'" />
+      <input type="button" value="." onclick="cal.screen.value += '.'" />
+      <input
+        type="button"
+        value="="
+        onclick="cal.screen.value = eval(cal.screen.value)"
+      />
+      <input type="button" value="+" onclick="cal.screen.value += '+'" />
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
