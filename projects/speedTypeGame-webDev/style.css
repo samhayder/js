@@ -1,0 +1,50 @@
+body {
+  background: blueviolet;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.timeCount {
+  text-align: center;
+  font-size: 4.5rem;
+  margin-bottom: 3rem;
+}
+
+.typeWrap {
+  background: cadetblue;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.wordText {
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  font-weight: 700;
+}
+
+#typeText {
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  resize: none;
+  width: 100% !important;
+  height: 15rem;
+  border: 1px solid indianred;
+  border-radius: 0.5rem;
+}
+
+.correct {
+  color: green;
+}
+.incorrect {
+  color: red;
+  text-decoration: underline;
+}
