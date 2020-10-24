@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.restart-btn {
+  background: bisque;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  transition: all 1s ease;
+}
+.restart-btn:hover {
+  background: blueviolet;
+}
+
+.score {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 1.2rem;
+  padding: 0 3rem;
+}
+
+.score p:first-child {
+  background: darkred;
+  padding: 0.5rem 0;
+}
+
+.score p:last-child {
+  background: darkgoldenrod;
+  padding: 0.5rem 0;
+}
+
+.choice {
+  font-size: 5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+.choice:hover {
+  background: darkred;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: none;
+}
+
+.modal-content {
+  width: 250px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 25px;
+  margin-top: 15rem;
+}
+
+.win {
+  background: green;
+}
+.lose {
+  background: red;
+}
